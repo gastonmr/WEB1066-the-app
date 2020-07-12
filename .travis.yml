@@ -6,6 +6,9 @@ jdk:
   - oraclejdk8
   - oraclejdk9
 
+services:
+  - docker
+
 env:
     - COVERAGE=0.057 TARGET=./monolithic/ui
     - COVERAGE=0.148 TARGET=./monolithic/service/cart
@@ -30,6 +33,6 @@ script:
 
 deploy:
   provider: script
-  script: echo 'WIP'
+  script: bash -c "echo \"${DOCKER_PASSWORD}\" | docker login --username \"${DOCKER_USERNAME}\" --password-stdin ;"
   on:
     all_branches: true
