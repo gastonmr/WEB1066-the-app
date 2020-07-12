@@ -36,6 +36,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script: "chmod +x ./script/deploy.sh && ./script/deploy.sh"
+  script: "./script/deploy.sh"
   on:
     all_branches: true
