@@ -8,7 +8,7 @@ env:
     - COVERAGE=0.057 TARGET=./monolithic/ui
     - COVERAGE=0.148 TARGET=./monolithic/service/cart
     - COVERAGE=0.0 TARGET=./monolithic/service/user
-    - COVERAGE=0.01 TARGET=./monolithic/repository/order
+    - COVERAGE=0.36 TARGET=./monolithic/repository/order
     - COVERAGE=0.0 TARGET=./monolithic/repository/cart
     - COVERAGE=0.124 TARGET=./monolithic/repository/product
     - COVERAGE=0.31 TARGET=./monolithic/repository/user
