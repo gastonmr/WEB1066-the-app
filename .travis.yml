@@ -31,8 +31,11 @@ script:
   #- "./gradlew test"
   - "COVERAGE=$COVERAGE ./gradlew -p $TARGET check"
 
+before_deploy:
+  - "./gradlew -p ./monolithic/ui packageToContainer"
+
 deploy:
   provider: script
-  script: bash -c "echo \"${DOCKER_PASSWORD}\" | docker login --username \"${DOCKER_USERNAME}\" --password-stdin ;"
+  script: "chmod +x ./script/deploy.sh"
   on:
     all_branches: true
